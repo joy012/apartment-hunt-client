@@ -1,6 +1,6 @@
 import React from 'react';
 
-const testfolder = () => {
+const Apartment = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const testfolder = () => {
     );
 };
 
-export default testfolder;
+export default Apartment;
