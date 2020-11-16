@@ -1,0 +1,17 @@
+.subHeader-bg{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url(../Images/images/headerBg.jpg);
+    background-position: center center;
+    background-size: cover;
+  }
+ .currentImg img{
+     width: 100%;
+     height: 300px ;
+ }
+  .tabImg{
+      padding: 5px;
+      cursor: pointer;
+  }
+  .tabImg img{
+      width: 175px;
+      height: auto;
+  }
