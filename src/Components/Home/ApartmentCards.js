@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faBed, faBath,faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { useHistory } from 'react-router-dom';
 
+
+
 const ApartmentCards = (props) => {
     const {name , address, price, img , charge, id} = props.apartment;
     const history = useHistory();
@@ -15,8 +17,8 @@ const ApartmentCards = (props) => {
         });
     }
     return (
-        <div className='col-md-4 mb-3'>
-            <div className="card apartment-cards" >  
+        <div className='col-lg-4 col-sm-6 mb-3'>
+            <div className="card apartment-cards h-100" >  
                 <img className="card-img-top" src={img} alt="apartment"/> 
                 <span class="card-body">
                     <h3 className="card-title">{name}</h3>
@@ -26,6 +28,7 @@ const ApartmentCards = (props) => {
                         <p  className="ml-auto "> <FontAwesomeIcon  icon={faBath} /> 2 Bathroom</p>
                     </span>
                 </span>
+
                 <span className='d-flex px-3'>
                     <h4  className="theme-text">{price}</h4>
                     <p onClick={()=>viewDetails(id)} className="btn theme-bg  px-4 ml-auto">View details</p>
