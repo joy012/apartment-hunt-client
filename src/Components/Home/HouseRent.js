@@ -1,8 +1,10 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import apartment from '../FakeData/apartmentData'
 import ApartmentCards from './ApartmentCards';
 
 const HouseRent = () => {
+   
     return (
         <section>
             <h5 className='text-center pt-5'>House Rent</h5>
