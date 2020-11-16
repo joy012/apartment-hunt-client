@@ -19,13 +19,18 @@ const Navigation = () => {
              <Nav className="ml-auto">
                  
                  {
-                     (currentPath === "/" || currentPath === "/home" || currentPath === '/apartment') &&
+                     (currentPath === "/" || currentPath === "/home" || currentPath === '/apartment' || currentPath === '/login') &&
                      <>
                      <Link to="/"><a className="nav-link mr-5">Home</a></Link>
                      <Link to="/"><a className="nav-link mr-5">About</a></Link>
                      <Link to="/"><a className="nav-link mr-5">Service</a></Link>
-                     <Link to="/dashboard"> <a className="nav-link mr-5 ">Dashboard</a></Link>
-                     <Link to="/login"> <button className='btn theme-bg px-5 mr-md-5 '>Login</button></Link>
+                     { sessionStorage.getItem('name') ? 
+                      <>
+                      <Link to="/dashboard"> <button className='btn theme-bg px-5 mr-md-5 '>{sessionStorage.getItem('name')}</button></Link>
+                      </>
+                      :
+                      <Link to="/login"> <button className='btn theme-bg px-5 mr-md-5 '>Login</button></Link>
+                     }
                      </>
                 }
                 {

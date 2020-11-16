@@ -18,7 +18,7 @@ const ApartmentForm = () => {
 
             <div className="form-group">
                 <div className="form-group"> 
-                <input name="name" class="form-control" type="text" placeholder= 'Full name' ref={register({ required: true })} />
+                <input name="name" className="form-control" type="text" placeholder= 'Full name' ref={register({ required: true })} />
                 {errors.name && <span className='error'>*Required</span>}
                 </div>
 
