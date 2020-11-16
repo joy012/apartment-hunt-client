@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import '../Css/Home.css'
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
     return (
         <section className ='header header-bg '>
             <div style={{height:'500px'}} className ='d-flex flex-column align-items-center text-white justify-content-center'>
-                <h1>FIND YOUR HOUSE RENT.</h1> 
+                <h1>FIND YOUR HOUSE RENT</h1> 
                 <div className = 'search-bar '>
                     <input type="text" placeholder ='Search...' onBlur = {handleSearch}/> 
                    
