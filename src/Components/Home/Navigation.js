@@ -19,7 +19,7 @@ const Navigation = () => {
              <Nav className="ml-auto">
                  
                  {
-                     (currentPath === "/" || currentPath === "/home") &&
+                     (currentPath === "/" || currentPath === "/home" || currentPath === '/apartment') &&
                      <>
                      <Link to="/"><a className="nav-link mr-5">Home</a></Link>
                      <Link to="/"><a className="nav-link mr-5">About</a></Link>
