@@ -20,7 +20,7 @@ const ApartmentCards = (props) => {
         <div className='col-lg-4 col-sm-6 mb-3'>
             <div className="card apartment-cards h-100" >  
                 <img className="card-img-top" src={img} alt="apartment"/> 
-                <span class="card-body">
+                <span className="card-body">
                     <h3 className="card-title">{name}</h3>
                     <p className="card-text ">{address}</p>
                     <span className='d-flex'>
@@ -29,9 +29,9 @@ const ApartmentCards = (props) => {
                     </span>
                 </span>
 
-                <span className='d-flex px-3'>
+                <span className='d-flex align-items-center px-3'>
                     <h4  className="theme-text">{price}</h4>
-                    <p onClick={()=>viewDetails(id)} className="btn theme-bg  px-4 ml-auto">View details</p>
+                    <p onClick={()=>viewDetails(id)} className="btn theme-bg  px-3 ml-auto">View details</p>
                 </span>
             </div>
         </div>
