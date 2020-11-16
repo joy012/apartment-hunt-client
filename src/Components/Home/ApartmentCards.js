@@ -1,12 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faBed, faBath,faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import {  faBed, faBath, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { useHistory } from 'react-router-dom';
 
 
 
 const ApartmentCards = (props) => {
-    const {name , address, price, img , charge, id} = props.apartment;
+    const {name , address, price, img , id} = props.apartment;
     const history = useHistory();
     const viewDetails = (id) => {
         history.push({ 
@@ -22,7 +22,7 @@ const ApartmentCards = (props) => {
                 <img className="card-img-top" src={img} alt="apartment"/> 
                 <span className="card-body">
                     <h3 className="card-title">{name}</h3>
-                    <p className="card-text ">{address}</p>
+                    <p className="card-text "> <FontAwesomeIcon className='mr-2 mt-1' icon={faMapMarkerAlt} /> {address}</p>
                     <span className='d-flex'>
                         <p  className=""> <FontAwesomeIcon  icon={faBed} /> 3 Bedrooms</p>
                         <p  className="ml-auto "> <FontAwesomeIcon  icon={faBath} /> 2 Bathroom</p>
