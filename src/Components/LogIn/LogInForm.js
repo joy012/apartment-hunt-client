@@ -1,5 +1,5 @@
 import React from 'react';
-import './LogInForm.css';
+import './LogInForm.scss';
 import fbLogo from '../Images/logos/fb.png';
 import googleLogo from '../Images/logos/google.png';
 import { useContext } from 'react';

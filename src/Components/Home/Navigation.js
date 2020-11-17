@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import { userContext } from '../../App';
-import '../Css/Home.css'
+import '../Css/Home.scss'
 import logo from '../Images/logos/Logo.png'
 const Navigation = () => {
     const [loggedInUser] = useContext(userContext);
@@ -26,7 +26,7 @@ const Navigation = () => {
                      <Link to="/"><a className="nav-link mr-5">Service</a></Link>
                      { sessionStorage.getItem('name') ? 
                       <>
-                      <Link to="/dashboard"> <button className='btn theme-bg px-5 mr-md-5 '>{sessionStorage.getItem('name')}</button></Link>
+                      <Link to="/dashboard#booking"> <button className='btn theme-bg px-5 mr-md-5 '>{sessionStorage.getItem('name')}</button></Link>
                       </>
                       :
                       <Link to="/login"> <button className='btn theme-bg px-5 mr-md-5 '>Login</button></Link>

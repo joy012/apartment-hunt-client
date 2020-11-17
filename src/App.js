@@ -9,6 +9,7 @@ import Home from './Components/Home/Home';
 import Apartment from './Components/Apartment/Apartment';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogIn from './Components/LogIn/LogIn';
+import DashBoard from './Components/DashBoard/DashBoard';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 export const userContext = createContext();
@@ -35,6 +36,7 @@ function App() {
 
   if(loggedInUser.name){
     sessionStorage.setItem('name', loggedInUser.name);
+    sessionStorage.setItem('email', loggedInUser.email);
   }
   
   return (
@@ -52,14 +54,13 @@ function App() {
         <Route exact path="/login">
           <LogIn/>
         </Route>
-
-
-        <PrivateRoute exact path="/apartment">
+        
+        <PrivateRoute exact path="/apartment/:id">
           <Apartment></Apartment>
         </PrivateRoute>
 
         <PrivateRoute exact path="/dashboard">
-          
+            <DashBoard />
         </PrivateRoute>
 
         <Route path='*'>

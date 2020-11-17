@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Css/Home.css';
+import '../Css/Home.scss';
 
 const ServiceCards = (props) => {
     const {name , details, img } = props.service;
