@@ -1,6 +1,6 @@
 import React from 'react';
 import SubHeader from './SubHeader';
-import '../Css/Apartment.css'
+import '../Css/Apartment.scss'
 import PropertyDetails from './PropertyDetails';
 import Navigation from '../Home/Navigation';
 

@@ -55,7 +55,7 @@ const Footer = () => {
                 </div>
                 
             </div>
-            <p className="py-3 text-center">©Team-69 2020, a Programming Hero initiative.</p>
+            <p className="py-3 text-center mb-0">©Team-69 2020, a Programming Hero initiative.</p>
         </footer>
    // <!-- footer ends -->
     );
