@@ -1,8 +1,11 @@
 import React from 'react';
-import servicedata from '../FakeData/servicesData'
+import { connect } from 'react-redux';
+//import service from '../FakeData/servicesData'
+import { addService } from '../Redux/Actions/ServiceAction';
 import ServiceCards from './ServiceCards';
 
-const Services = () => {
+const Services = (props) => {
+const {service} = props; // hare we inplement redux. we receive data from porps which is in servide reducer
 
     return (
         <section  className ='my-5 pt-4 w-75 mx-auto '>
@@ -11,11 +14,19 @@ const Services = () => {
             clients' needs that always delivers</h2>
             <div className="row">
                 {
-                    servicedata.map(service => <ServiceCards service={service} key={service.id}> </ServiceCards>)
+                    service.map(service => <ServiceCards service={service} key={service.id}> </ServiceCards>)
                 }
             </div>
         </section>
     );
 };
 
-export default Services;
+const mapStateToProps = state =>{
+    return{
+        service: state.service
+    }
+}
+const mapDispatchToProps = {
+    addService : addService
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Services); //--------------connect redux-------------
