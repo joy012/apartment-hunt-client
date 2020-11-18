@@ -35,8 +35,8 @@ const Dashboard = () => {
 
                         <Link to='#booking' className="my-4 text-dark"><i class="fas fa-suitcase"></i> Booking List</Link>
                         <Link to='#addHouse' className="mb-4 text-dark"><i class="fas fa-plus"></i> Add House</Link>
-                        <Link to='#myRent' className="mb-4 text-dark"><i class="fas fa-arrow-left"></i> My Rent</Link>
-                        <Link to='/' className="text-dark"><i class="fas fa-home"></i> Home</Link>
+                        <Link to='#myRent' className="mb-4 text-dark"><i class="fas fa-home"></i> My Rent</Link>
+                        <Link to='/' className="text-dark"><i class="fas fa-arrow-left"></i> Home</Link>
 
                     </nav>
                 </div>

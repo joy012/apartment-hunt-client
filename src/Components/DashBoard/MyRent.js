@@ -37,7 +37,7 @@ const MyRent = () => {
                     {
                         houses.map(house =>
                             <tr>
-                                <td>{house.name}</td>
+                                <td>{house.service}</td>
                                 <td>{house.price}</td>
                                 <td><p onClick={()=>viewDetails(house._id)} className="btn theme-bg  px-3 ml-auto">View details</p></td>
     

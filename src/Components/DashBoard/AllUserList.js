@@ -34,10 +34,10 @@ const AllUserList = () => {
                     {
                         allUser.map(user =>
                             <tr>
-                                <td>{user.service}</td>
+                                <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user.service}</td>
-                                <td>{user.details}</td>
+                                <td>{user.phone}</td>
+                                <td>{user.message}</td>
                                 <td >
                                     <button className="btn btn-danger">Pending</button>
                                 </td>

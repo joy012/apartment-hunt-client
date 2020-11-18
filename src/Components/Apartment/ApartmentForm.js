@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
 
 
-const ApartmentForm = () => {
+const ApartmentForm = ({service, price}) => {
     const { register, handleSubmit, errors } = useForm();
     const [userInfo, setUserInfo] = useState({})
     const history = useHistory();
@@ -15,10 +15,12 @@ const ApartmentForm = () => {
     }
     const handleAddUser = e => {
         const formData = new FormData();
-        formData.append('name', userInfo.service);
+        formData.append('name', userInfo.name);
         formData.append('email',userInfo.email); 
         formData.append('phone', userInfo.phone);
         formData.append('message', userInfo.message);
+        formData.append('service', service);
+        formData.append('price', price);
 
         fetch('https://apartment-hunt-spa.herokuapp.com/addUserBooking', {
             method: 'POST',
