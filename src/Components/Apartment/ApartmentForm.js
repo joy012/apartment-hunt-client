@@ -47,7 +47,7 @@ const ApartmentForm = () => {
                 </div>
 
                 <div className="form-group">    
-                <input name="phone" onBlur={handleBlur} className="form-control" type="number" placeholder= 'Phone' ref={register({ required: true })} />
+                <input name="phone" onBlur={handleBlur} className="form-control" type="text" placeholder= 'Phone' ref={register({ required: true })} />
                 {errors.phone && <span className='error'>*Required</span>}
                 </div>
                 

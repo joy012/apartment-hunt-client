@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const AddHouse = () => {
     const [house, setHouse] = useState({});
     const [file, setFile] = useState(null);
-console.log(house)
+
     const handleHouse = e => {
         const formData = new FormData();
         formData.append('file', file);
