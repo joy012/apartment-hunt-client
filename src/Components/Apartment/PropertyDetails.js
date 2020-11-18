@@ -3,12 +3,13 @@ import { useParams } from 'react-router-dom';
 import ApartmentForm from './ApartmentForm';
 
 const PropertyDetails = () => {
-    const {id}= useParams();
+    const { id } = useParams();
     const [apartments, setApartments] = useState([]);
-    const house = apartments.find(apartment => {return (apartment._id).toString() === id.toString()})
-    const {service, location, price } = house || '';
-    const [currentImg, setCurrentimg] = useState()
-    
+    const house = apartments.length &&
+        apartments.find(apartment => { return (apartment._id).toString() === id.toString() })
+    const { service, location, price, image } = house;
+    const [currentImg, setCurrentimg] = useState(`data:image/png;base64,${image.img}`)
+
 
     useEffect(() => {
         fetch('https://apartment-hunt-spa.herokuapp.com/apartments')
@@ -17,31 +18,32 @@ const PropertyDetails = () => {
                 setApartments(data);
             })
     }, [id])
-    
-    const changeImg = (src)=>{
+
+    const changeImg = (src) => {
         setCurrentimg(src);
     }
 
+
     return (
-        <section className = 'container'>
+        <section className='container'>
             <div className="row">
                 <div className="col-md-8 py-4">
                     <div className="currentImg">
-                        <img src={currentImg} alt='apartment' id="expandedImg"/>
+                        <img src={currentImg} alt='apartment' id="expandedImg" />
                     </div>
 
                     <div className="row mt-2">
                         <div className="column tabImg">
-                            <img src="https://i.ibb.co/pnSXQ8S/Rectangle-407.png" alt="interior" onClick={()=>changeImg('https://i.ibb.co/pnSXQ8S/Rectangle-407.png')}/>
+                            <img src="https://i.ibb.co/pnSXQ8S/Rectangle-407.png" alt="interior" onClick={() => changeImg('https://i.ibb.co/pnSXQ8S/Rectangle-407.png')} />
                         </div>
                         <div className="column tabImg">
-                            <img src="https://i.ibb.co/fq9W8rx/Rectangle-408.png" alt="interior" onClick={()=>changeImg('https://i.ibb.co/fq9W8rx/Rectangle-408.png')}/>
+                            <img src="https://i.ibb.co/fq9W8rx/Rectangle-408.png" alt="interior" onClick={() => changeImg('https://i.ibb.co/fq9W8rx/Rectangle-408.png')} />
                         </div>
                         <div className="column tabImg">
-                            <img src="https://i.ibb.co/B2N1Z72/Rectangle-409.png" alt="interior" onClick={()=>changeImg('https://i.ibb.co/B2N1Z72/Rectangle-409.png')}/>
+                            <img src="https://i.ibb.co/B2N1Z72/Rectangle-409.png" alt="interior" onClick={() => changeImg('https://i.ibb.co/B2N1Z72/Rectangle-409.png')} />
                         </div>
                         <div className="column tabImg">
-                            <img src="https://i.ibb.co/j3VRhw7/Rectangle-410.png" alt="interior" onClick={()=>changeImg('https://i.ibb.co/j3VRhw7/Rectangle-410.png')}/>
+                            <img src="https://i.ibb.co/j3VRhw7/Rectangle-410.png" alt="interior" onClick={() => changeImg('https://i.ibb.co/j3VRhw7/Rectangle-410.png')} />
                         </div>
                     </div>
                     <div className='mt-4'>
@@ -49,14 +51,14 @@ const PropertyDetails = () => {
                             <h3 className='theme-text'>{service}</h3>
                             <b className='ml-auto theme-text'><h3>${price}</h3></b>
                         </div>
-                        <p>3000 sq-ft., 3 Bedroom, Semi-furnished, Luxurious, South facing Apartment for Rent in Rangs Malancha, Melbourne.</p> 
+                        <p>3000 sq-ft., 3 Bedroom, Semi-furnished, Luxurious, South facing Apartment for Rent in Rangs Malancha, Melbourne.</p>
 
                         <h4 className='theme-text'>Price Details</h4>
                         <p>Rent/Month: ${price} </p>
                         <p>Service Charge : 5,000/= Tk per month</p>
                         <p>Security Deposit : 3 months rent </p>
                         <p>Flat Release Policy :  3 months earlier notice required</p>
-                        
+
                         <h4 className='theme-text'>Property Details</h4>
                         <p> Address & Area : {location}</p>
                         <p> Flat Size : 300 sq feet</p>
@@ -70,7 +72,7 @@ const PropertyDetails = () => {
                     <ApartmentForm></ApartmentForm>
                 </div>
             </div>
-            
+
         </section>
     );
 };
