@@ -5,8 +5,7 @@ import ApartmentForm from './ApartmentForm';
 const PropertyDetails = () => {
     const { id } = useParams();
     const [apartments, setApartments] = useState([]);
-    const house = apartments.length &&
-        apartments.find(apartment => { return (apartment._id).toString() === id.toString() })
+    const house = apartments.find(apartment => { return (apartment._id).toString() === id.toString() })
     const { service, location, price, image } = house;
     const [currentImg, setCurrentimg] = useState(`data:image/png;base64,${image.img}`)
 
