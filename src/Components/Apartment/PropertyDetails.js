@@ -11,10 +11,10 @@ const PropertyDetails = () => {
 
     const loadAll = async () => {
         const fetchData = await fetch(`https://apartment-hunt-spa.herokuapp.com/getApartment/${id}`);
-        const response = await fetchData.json();
-        setHouse(response);
-        setCurrentimg(`data:image/png;base64,${response.image.img}`)
-
+        const response = await fetchData.clone();
+        const data = await response.json();
+        setHouse(data);
+        setCurrentimg(`data:image/png;base64,${data.image.img}`)
     }
 
 

@@ -20,7 +20,7 @@ const MyRent = () => {
     }, [email])
 
     const viewDetails = (id) => {
-        history.push('/')
+        history.push(`/apartment/${id}`)
     }
 
     return (
